@@ -27,6 +27,9 @@ window.RC = (typeof Recharts !== "undefined") ? Recharts : {};
 </script>
 
 <script>
+// localStorage helpers (used by compiled code)
+function lsGet(k){try{var v=localStorage.getItem(k);return Promise.resolve(v?{value:v}:null);}catch(e){return Promise.resolve(null);}}
+function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}return Promise.resolve({value:v});}
 // Globals needed by compiled code
 var useState = React.useState;
 var useEffect = React.useEffect;
